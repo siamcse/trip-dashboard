@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import DragNDrop from "../../../../components/DragNDrop";
+import DropZone from "../../../../components/DropZone";
+import { useState } from "react";
 
 const AddNewInvoices = () => {
+    const [files, setFiles] = useState([]);
     return (
         <div className="p-2">
             <div className=''>
@@ -24,8 +28,11 @@ const AddNewInvoices = () => {
                                 <input className="border outline-none px-3 py-2 rounded-full" type="text" name="client" id="" placeholder="Select Trip" />
                             </label>
                         </div>
-                        <div className="col-span-3">
-                            <p>Plane Image</p>
+                        <div className="col-span-3 ml-8">
+                            <p className="text-lg font-semibold mb-2">Plane Image</p>
+                            <div className="border border-dashed w-44">
+                                <DropZone files={files} setFiles={setFiles} />
+                            </div>
                         </div>
                     </div>
                 </div>
