@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import DragNDrop from "../../../../components/DragNDrop";
 import DropZone from "../../../../components/DropZone";
 import { useState } from "react";
+import ImagePreview from "../../../../components/ImagePreview";
 
 const AddNewInvoices = () => {
     const [files, setFiles] = useState([]);
+    console.log(files.length);
     return (
         <div className="p-2">
             <div className=''>
@@ -31,7 +33,11 @@ const AddNewInvoices = () => {
                         <div className="col-span-3 ml-8">
                             <p className="text-lg font-semibold mb-2">Plane Image</p>
                             <div className="border border-dashed w-44">
-                                <DropZone files={files} setFiles={setFiles} />
+                                {
+                                    files.length > 0 ? <ImagePreview files={files} setFiles={setFiles} />
+                                        :
+                                        <DropZone files={files} setFiles={setFiles} />
+                                }
                             </div>
                         </div>
                     </div>
