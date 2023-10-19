@@ -35,7 +35,7 @@ const AddProduct = () => {
                     <h4>Description</h4>
                     <h4>Total</h4>
                 </div>
-                <hr className='opacity-40'/>
+                <hr className='opacity-40' />
                 <div>
                     <AddProductForm />
                 </div>
@@ -46,15 +46,16 @@ const AddProduct = () => {
                         <p className='font-semibold'>TVA : <span className='opacity-70'>2,800.000</span></p>
                     </div>
                     <hr className='opacity-40 mt-2' />
-                    <div>
+                    <div className='flex items-center justify-between mt-5 mr-10'>
                         <div>
-                            <button>Save</button>
-                            <button>Cancel</button>
-                            <button>Save</button>
+                            <button className='bg-primary hover:bg-[#293c75f8] py-2 px-4 rounded-full text-white mr-2'>Save</button>
+                            <button className='py-2 px-4 rounded-full border mr-2'>Cancel</button>
+                            <button className='bg-primary hover:bg-[#293c75f8] py-2 px-4 rounded-full text-white mr-2'>Download Invoice</button>
                         </div>
+                        <p className='font-semibold'>Total : <span className='opacity-70'>19.350.000</span></p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     );
